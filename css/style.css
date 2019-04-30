@@ -68,6 +68,7 @@ html, body {
         display: inline-block;
         max-width: 90%; }
     .fixed-wrapper .fixed-modal .text-block {
+      position: relative;
       background: #191919;
       padding: 33px 60px 40px;
       text-align: center; }
@@ -90,7 +91,6 @@ html, body {
         .fixed-wrapper .fixed-modal .text-block .text-style b {
           font-weight: bold; }
     .fixed-wrapper .fixed-modal .telegram-btn {
-      margin-top: 37px;
       font-family: "Gotham Pro";
       font-size: 16px;
       font-weight: 400;
@@ -100,6 +100,23 @@ html, body {
       color: #c59706;
       background: #2d2717;
       text-decoration: none; }
+    .fixed-wrapper .fixed-modal .telegram-btn-block{
+      position: relative;
+      margin-top: 37px;
+    }
+    .fixed-wrapper .fixed-modal .copy-alert{
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 100%;
+      box-sizing: border-box;
+      padding: 10px 30px 10px;
+      background: #7bff44;
+      color: #121212;
+      font-family: "Gotham Pro";
+      font-size: 16px;
+      display: none;
+    }
 
 @media screen and (max-width: 560px) {
   .fixed-wrapper .fixed-modal {

@@ -31,23 +31,26 @@
                     Горящая продажа, торг уместен
                 </p>
             </div>
-            <a href="javascript:;" class="telegram-btn">Наш телеграм: <b class="copy-data">ecopin</b></a>
+            <div class="telegram-btn-block">
+                <a href="javascript:;" class="telegram-btn">Наш телеграм: <b class="copy-data">ecopin</b></a>
+                <div class="copy-alert">Телеграмм канал был скопирован в буфер обмена</div>
+            </div>
         </div>
     </div>
 </div>
-
+<script src="js/jquery-1.12.1.js"></script>
 <script>
     var copyBtn = document.querySelector('.telegram-btn');
     copyBtn.addEventListener('click', function(event) {
+        window.getSelection().removeAllRanges();
         var selectRange = document.querySelector('.copy-data');
         var range = document.createRange();
         range.selectNode(selectRange);
         window.getSelection().addRange(range);
 
         try {
-            var successful = document.execCommand('copy');
-            var msg = successful ? 'successful' : 'unsuccessful';
-            console.log('Copy ' + msg);
+            document.execCommand('copy');
+            $(".copy-alert").slideDown('fast'); setTimeout(function() { $(".copy-alert").slideUp('fast'); }, 3000);
         } catch(err) {
             console.log('Copy error');
         }
