@@ -31,9 +31,28 @@
                     Горящая продажа, торг уместен
                 </p>
             </div>
-            <a href="tg://resolve?domain=ecopin" class="telegram-btn">Наш телеграм: <b>ecopin</b></a>
+            <a href="javascript:;" class="telegram-btn">Наш телеграм: <b class="copy-data">ecopin</b></a>
         </div>
     </div>
 </div>
+
+<script>
+    var copyBtn = document.querySelector('.telegram-btn');
+    copyBtn.addEventListener('click', function(event) {
+        var selectRange = document.querySelector('.copy-data');
+        var range = document.createRange();
+        range.selectNode(selectRange);
+        window.getSelection().addRange(range);
+
+        try {
+            var successful = document.execCommand('copy');
+            var msg = successful ? 'successful' : 'unsuccessful';
+            console.log('Copy ' + msg);
+        } catch(err) {
+            console.log('Copy error');
+        }
+    });
+</script>
+
 </body>
 </html>
